@@ -1,0 +1,127 @@
+/* Estilo principal del contenedor */
+.home-container {
+  display: flex;
+  height: 100vh; /* Ocupa toda la altura de la pantalla */
+  font-family: 'DM sans', sans-serif;
+  flex-direction: row; /* Diseño horizontal por defecto */
+}
+
+/* Sección izquierda */
+.left-section {
+  flex: 1; /* Ocupa el 50% del ancho */
+  display: flex;
+  justify-content: center; /* Centra horizontalmente */
+  align-items: center; /* Centra verticalmente */
+  background-color: #5652BA; /* Azul oscuro como los botones */
+}
+
+.dog-image {
+  width: 80%; /* Ajusta el tamaño de la imagen */
+  max-width: 550px; /* Máximo tamaño para pantallas grandes */
+  height: auto;
+  border-radius: 10px;
+}
+
+/* Sección derecha */
+.right-section {
+  flex: 1; /* Ocupa el otro 50% */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: #e9ecef; /* Color más claro */
+  padding: 20px; /* Espaciado adicional */
+}
+
+/* Contenedor del botón */
+.button-container {
+  position: relative;
+  display: inline-block;
+}
+
+/* Botón de acción */
+.action-button {
+  width: 350px;
+  max-width: 80%; /* Adaptable para pantallas pequeñas */
+  padding: 15px;
+  margin: 10px;
+  font-size: 20px;
+  color: white;
+  background-color: #5652BA;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  transition: all 0.3s ease;
+}
+
+.action-button:hover {
+  background-color: #EAC8CE;
+  transform: scale(1.10);
+  color: #5652BA;
+  font-weight: 500;
+}
+
+/* Tooltip (burbuja de texto) */
+.tooltip {
+  position: absolute;
+  top: -40px; /* Ajusta para posicionar la burbuja encima */
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: white;
+  color: black;
+  padding: 10px;
+  border-radius: 5px;
+  font-size: 16px;
+  white-space: nowrap;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  z-index: 10;
+}
+
+/* Adaptaciones para pantallas pequeñas */
+@media (max-width: 600px) {
+  .tooltip {
+    font-size: 13px;
+    top: -60px; /* Ajustar el espacio según el tamaño del texto */
+    white-space: wrap;
+    text-align: center;
+    min-width:300px;
+    transform: translateX(-58%);
+  }
+}
+
+/* Icono dentro de los botones */
+.action-icon {
+  font-size: 18px;
+}
+
+/* Media queries para dispositivos más pequeños */
+@media (max-width: 768px) {
+  .home-container {
+    flex-direction: column; /* Cambia a diseño vertical */
+  }
+
+  .left-section, .right-section {
+    flex: none; /* No se divide el ancho */
+    width: 100%; /* Ocupa todo el ancho */
+    height: 50%; /* Ocupa la mitad de la altura */
+  }
+
+  .dog-image {
+    width: 60%; /* Imagen más pequeña en pantallas pequeñas */
+  }
+}
+
+@media (max-width: 480px) {
+  .action-button {
+    font-size: 14px; /* Botones más pequeños */
+    padding: 12px;
+  }
+
+  .dog-image {
+    width: 70%; /* Ajusta la imagen para pantallas muy pequeñas */
+  }
+}
